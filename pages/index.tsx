@@ -71,7 +71,9 @@ const Team: React.FC<Props> = ({ heroes }) => {
         ))}
       {allRoles.map((role) => (
         <div key={role}>
-          <h1>Pick enemy {role}</h1>
+          <h1>
+            Pick enemy {role} ({selectedHeroes[role].limit})
+          </h1>
           <HeroesList
             limit={selectedHeroes[role].limit}
             selectedHeroes={selectedHeroes[role].heroes}
