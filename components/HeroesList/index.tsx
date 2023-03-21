@@ -43,4 +43,8 @@ const HorizontalList = styled.div`
   margin: 0;
   overflow-x: scroll;
   margin: 10px 0 30px 0;
+
+  @media (max-width: 768px) {
+    height: 120px;
+  }
 `;

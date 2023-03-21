@@ -39,6 +39,11 @@ const Container = styled.div<{ avatar_url: string; selected?: boolean }>`
     font-size: 1.5rem;
     margin-bottom: 0;
   }
+
+  @media (max-width: 768px) {
+    height: 120px;
+    width: 120px;
+  }
 `;
 
 export default Hero;
