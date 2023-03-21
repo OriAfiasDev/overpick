@@ -1,14 +1,11 @@
 import supabase from '@/backend/supabase';
-import { Hero } from '@/components/Hero';
 import { HeroesList } from '@/components/HeroesList';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
 interface Props {
   heroes: any[];
 }
-
-type Role = 'tank' | 'damage' | 'support';
 
 type SelectedHeroes = {
   [role in Role]: { heroes: Hero[]; limit: number };
@@ -23,11 +20,17 @@ const initialSelectedHeroes: SelectedHeroes = {
 const allRoles: Role[] = ['tank', 'damage', 'support'];
 
 const Team: React.FC<Props> = ({ heroes }) => {
-  const tanks = heroes.filter((hero) => hero.role === 'tank');
   const [selectedHeroes, setSelectedHeroes] = useState<SelectedHeroes>(initialSelectedHeroes);
   const [bestCounters, setBestCounters] = useState<{ [name: string]: number }>({});
 
+  const isAllSelected = useMemo(
+    () => Object.values(selectedHeroes).every((role) => role.heroes.length === role.limit),
+    [selectedHeroes]
+  );
+
   const onSubmit = async () => {
+    if (!isAllSelected) return;
+
     const res = await fetch('/api/counters', {
       method: 'POST',
       headers: {
@@ -71,10 +74,8 @@ const Team: React.FC<Props> = ({ heroes }) => {
         ))}
       {allRoles.map((role) => (
         <div key={role}>
-          <h1>
-            Pick enemy {role} ({selectedHeroes[role].limit})
-          </h1>
           <HeroesList
+            role={role}
             limit={selectedHeroes[role].limit}
             selectedHeroes={selectedHeroes[role].heroes}
             setSelectedHero={(hero: Hero) => onSelectedHero(hero, role as Role)}
@@ -82,14 +83,16 @@ const Team: React.FC<Props> = ({ heroes }) => {
           />
         </div>
       ))}
-      <SubmitButton onClick={onSubmit}>Generate Pick</SubmitButton>
+      <SubmitButton onClick={onSubmit} disabled={!isAllSelected}>
+        Generate Pick
+      </SubmitButton>
     </div>
   );
 };
 
 export default Team;
 
-const SubmitButton = styled.span`
+const SubmitButton = styled.span<{ disabled: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,10 +104,12 @@ const SubmitButton = styled.span`
   padding: 20px;
   border: none;
   cursor: pointer;
-  opacity: 0.87;
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 0.87)};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  transition: opacity 0.2s ease-in-out;
 
   &:hover {
-    opacity: 1;
+    ${({ disabled }) => !disabled && 'opacity: 1'};
   }
 `;
 

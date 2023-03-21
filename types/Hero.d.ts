@@ -6,3 +6,5 @@ interface Hero {
   avatar_url: string;
   health?: number;
 }
+
+type Role = 'tank' | 'damage' | 'support';

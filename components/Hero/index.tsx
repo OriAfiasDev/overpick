@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import styles from './Hero.module.css';
 
 interface Props {
   hero: Hero;
@@ -11,11 +10,7 @@ interface Props {
 export const Hero: React.FC<Props> = ({ hero, selected, setSelectedHero }) => {
   return (
     <Container avatar_url={hero.avatar_url} selected={selected} onClick={() => setSelectedHero(hero)}>
-      {/* <img className={styles.image} src={avatar_url} alt={name} /> */}
-      <span className={styles.name}>{hero.name}</span>
-      {/* <p className={styles.role}>Role: {role}</p>
-      <p className={styles.health}>Health: {health}</p> */}
-      {/* <p className={styles.description}>{description}</p> */}
+      <span className='name'>{hero.name}</span>
     </Container>
   );
 };
@@ -39,6 +34,11 @@ const Container = styled.div<{ avatar_url: string; selected?: boolean }>`
     avatar_url,
   }) => `linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%),
     url(${avatar_url})`};
+
+  & > .name {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
 `;
 
 export default Hero;
