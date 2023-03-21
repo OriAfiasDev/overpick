@@ -20,7 +20,7 @@ const run = async (enemyTeam: string[], myPick: string) => {
     )
     .in(
       'hero_id',
-      enemyTeamIds?.map(({ id }) => id)
+      (enemyTeamIds as Hero[])?.map(({ id }) => id)
     ) // find counters for heroes with these ids
     .eq('counter.role', myPick); // find counters that are tanks
 
