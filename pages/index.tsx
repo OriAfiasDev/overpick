@@ -2,6 +2,7 @@ import supabase from '@/backend/supabase';
 import { Hero } from '@/components/Hero';
 import { HeroesList } from '@/components/HeroesList';
 import { useCallback, useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 interface Props {
   heroes: any[];
@@ -79,12 +80,31 @@ const Team: React.FC<Props> = ({ heroes }) => {
           />
         </div>
       ))}
-      <button onClick={onSubmit}>Go go go</button>
+      <SubmitButton onClick={onSubmit}>Generate Pick</SubmitButton>
     </div>
   );
 };
 
 export default Team;
+
+const SubmitButton = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #df5e1d;
+  margin: 20px;
+  color: #fff;
+  font-size: 24px;
+  height: 70px;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.87;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
 
 export async function getStaticProps() {
   let { data: heroes, error } = await supabase.from('heroes').select('*');

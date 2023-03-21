@@ -10,15 +10,17 @@ interface Props {
 
 export const HeroesList: React.FC<Props> = ({ heroes, selectedHeroes, setSelectedHero }) => {
   return (
-    <div className={styles.heroesGrid}>
-      {heroes.map((hero) => (
-        <Hero
-          key={hero.id}
-          hero={hero}
-          selected={selectedHeroes?.map((h) => h.id).includes(hero.id)}
-          setSelectedHero={setSelectedHero}
-        />
-      ))}
+    <div className={styles.scrollContainer}>
+      <div className={styles.heroesGrid}>
+        {heroes.map((hero) => (
+          <Hero
+            key={hero.id}
+            hero={hero}
+            selected={selectedHeroes?.map((h) => h.id).includes(hero.id)}
+            setSelectedHero={setSelectedHero}
+          />
+        ))}
+      </div>
     </div>
   );
 };

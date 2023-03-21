@@ -12,7 +12,7 @@ export const Hero: React.FC<Props> = ({ hero, selected, setSelectedHero }) => {
   return (
     <Container avatar_url={hero.avatar_url} selected={selected} onClick={() => setSelectedHero(hero)}>
       {/* <img className={styles.image} src={avatar_url} alt={name} /> */}
-      <h2 className={styles.name}>{hero.name}</h2>
+      <span className={styles.name}>{hero.name}</span>
       {/* <p className={styles.role}>Role: {role}</p>
       <p className={styles.health}>Health: {health}</p> */}
       {/* <p className={styles.description}>{description}</p> */}
@@ -25,16 +25,19 @@ const Container = styled.div<{ avatar_url: string; selected?: boolean }>`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: 1rem;
-  border: 2px solid ${({ selected }) => (selected ? '#b342f5' : '#ddd')};
+  padding: 0rem;
+  border: 4px solid ${({ selected }) => (selected ? '#df5e1d' : '#ddd')};
   border-radius: 16px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   height: 180px;
   width: 180px;
+  margin: 0 0.5rem;
   cursor: pointer;
 
-  background-image: ${({ avatar_url }) => `linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(0, 0, 0, 0.73)),
+  background-image: ${({
+    avatar_url,
+  }) => `linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%),
     url(${avatar_url})`};
 `;
 
