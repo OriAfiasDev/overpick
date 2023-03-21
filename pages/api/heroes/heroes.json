@@ -1,0 +1,255 @@
+[
+  {
+    "key": "ana",
+    "name": "Ana",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/3429c394716364bbef802180e9763d04812757c205e1b4568bc321772096ed86.png",
+    "role": "support",
+    "description": "Ana is a sniper who excels at long-range combat. She can heal her allies and deal damage with her Biotic Rifle, and she can use her Biotic Grenade to heal allies or damage enemies. Ana's ultimate ability, Nano Boost, temporarily increases the damage output of an ally."
+  },
+  {
+    "key": "ashe",
+    "name": "Ashe",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/8dc2a024c9b7d95c7141b2ef065590dbc8d9018d12ad15f76b01923986702228.png",
+    "role": "damage",
+    "description": "Ashe is a versatile marksman who excels at long-range combat. She can use her Dynamite to damage or slow enemies, and her Coach Gun can fire a spread of projectiles. Ashe's ultimate ability, Bob, is a robotic omnic that can be deployed to harass enemies or protect allies."
+  },
+  {
+    "key": "baptiste",
+    "name": "Baptiste",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/f979896f74ba22db2a92a85ae1260124ab0a26665957a624365e0f96e5ac5b5c.png",
+    "role": "support",
+    "description": "Baptiste is a combat medic who excels at close-range combat. He can heal his allies and deal damage with his Immortality Field, and he can use his Immortality Amp to heal allies or damage enemies. Baptiste's ultimate ability, Amplification Matrix, temporarily increases the damage output of allies within its radius."
+  },
+  {
+    "key": "bastion",
+    "name": "Bastion",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4d715f722c42215072b5dd0240904aaed7b5285df0b2b082d0a7f1865b5ea992.png",
+    "role": "damage",
+    "description": "Bastion is a versatile robot that can transform between a Recon configuration that excels at long-range combat, a Sentry configuration that excels at short-range combat, and a Tank configuration that can take a lot of damage. Bastion's ultimate ability, Self-Repair, allows it to heal itself."
+  },
+  {
+    "key": "brigitte",
+    "name": "Brigitte",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/48392820c6976ee1cd8dde13e71df85bf15560083ee5c8658fe7c298095d619a.png",
+    "role": "support",
+    "description": "Brigitte is a versatile support hero who excels at close-range combat. She can heal her allies and deal damage with her Flail, and she can use her Shield Bash to knock enemies away. Brigitte's ultimate ability, Rally, temporarily increases the movement speed of allies within its radius."
+  },
+  {
+    "key": "cassidy",
+    "name": "Cassidy",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/6cfb48b5597b657c2eafb1277dc5eef4a07eae90c265fcd37ed798189619f0a5.png",
+    "role": "damage",
+    "description": "Cassidy is a sharpshooter who excels at long-range combat. She can deal damage with her Peacekeeper, and she can use her Helix Rockets to damage or slow enemies. Cassidy's ultimate ability, Tactical Visor, temporarily increases the damage output of her Peacekeeper."
+
+  },
+  {
+    "key": "dva",
+    "name": "D.Va",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ca114f72193e4d58a85c087e9409242f1a31e808cf4058678b8cbf767c2a9a0a.png",
+    "role": "tank",
+    "description": "D.Va is a versatile mech pilot who excels at close-range combat. She can use her Fusion Cannons to deal damage, and she can use her Defense Matrix to block incoming projectiles. D.Va's ultimate ability, Self-Destruct, blows up her mech to damage nearby enemies."
+  },
+  {
+    "key": "doomfist",
+    "name": "Doomfist",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/13750471c693c1a360eb19d5ace229c8599a729cd961d72ebee0e157657b7d18.png",
+    "role": "tank",
+    "description": "Doomfist is a brawler who excels at close-range combat. He can use his Rocket Punch to knock enemies away, and he can use his Seismic Slam to damage enemies and knock them into the air. Doomfist's ultimate ability, Meteor Strike, allows him to launch himself into the air and damage enemies in an area around his landing point."
+  },
+  {
+    "key": "echo",
+    "name": "Echo",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/f086bf235cc6b7f138609594218a8385c8e5f6405a39eceb0deb9afb429619fe.png",
+    "role": "damage",
+    "description": "Echo is a versatile robot who excels at close-range combat. She can use her Biotic Rifle to deal damage, and she can use her Biotic Launcher to heal allies or damage enemies. Echo's ultimate ability, Duplicate, creates a copy of herself that fights alongside her."
+  },
+  {
+    "key": "genji",
+    "name": "Genji",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4edf5ea6d58c449a2aeb619a3fda9fff36a069dfbe4da8bc5d8ec1c758ddb8dc.png",
+    "role": "damage",
+    "description": "Genji is a versatile ninja who excels at close-range combat. He can use his Shuriken to deal damage, and he can use his Deflect to block incoming projectiles. Genji's ultimate ability, Dragonblade, allows him to slash at nearby enemies with his katana."
+  },
+  {
+    "key": "hanzo",
+    "name": "Hanzo",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/aecd8fa677f0093344fab7ccb7c37516c764df3f5ff339a5a845a030a27ba7e0.png",
+    "role": "damage",
+    "description": "Hanzo is a versatile marksman who excels at long-range combat. He can use his Storm Bow to deal damage, and he can use his Sonic Arrow to reveal enemies. Hanzo's ultimate ability, Dragonstrike, allows him to call down a rain of dragons that damage enemies in an area."
+  },
+  {
+    "key": "junker-queen",
+    "name": "Junker Queen",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/cef2406b2244b80506f83b8fb9ebaf214f41fa8795cbeef84026cd8018561d04.png",
+    "role": "tank",
+    "description": "Junker Queen is a versatile mech pilot who excels at close-range combat. She can use her Fusion Cannons to deal damage, and she can use her Defense Matrix to block incoming projectiles. Junker Queen's ultimate ability, Self-Destruct, blows up her mech to damage nearby enemies."
+  },
+  {
+    "key": "junkrat",
+    "name": "Junkrat",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/037e3df083624e5480f8996821287479a375f62b470572a22773da0eaf9441d0.png",
+    "role": "damage",
+    "description": "Junkrat is a versatile demolitionist who excels at close-range combat. He can use his Frag Launcher to deal damage, and he can use his Steel Trap to slow enemies. Junkrat's ultimate ability, RIP-Tire, deploys a remote-controlled tire that damages enemies."
+  },
+  {
+    "key": "kiriko",
+    "name": "Kiriko",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/088aff2153bdfa426984b1d5c912f6af0ab313f0865a81be0edd114e9a2f79f9.png",
+    "role": "support",
+    "description": "Kiriko is a versatile healer who excels at close-range combat. She can use her Healing Staff to heal allies, and she can use her Barrier Projector to block incoming projectiles. Kiriko's ultimate ability, Transcendence, heals allies in an area around her."
+  },
+  {
+    "key": "lucio",
+    "name": "Lucio",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/e2ff2527610a0fbe0c9956f80925123ef3e66c213003e29d37436de30b90e4e1.png",
+    "role": "support",
+    "description": "Lucio is a versatile healer who excels at close-range combat. He can use his Sonic Amplifier to heal allies, and he can use his Soundwave to slow enemies. Lucio's ultimate ability, Sound Barrier, blocks incoming damage for allies in an area around him."
+  },
+  {
+    "key": "mei",
+    "name": "Mei",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/1533fcb0ee1d3f9586f84b4067c6f63eca3322c1c661f69bfb41cd9e4f4bcc11.png",
+    "role": "damage",
+    "description": "Mei is a versatile defense specialist who excels at close-range combat. She can use her Endothermic Blaster to deal damage, and she can use her Cryo-Freeze to slow enemies. Mei's ultimate ability, Blizzard, creates a blizzard that damages enemies in an area."
+  },
+  {
+    "key": "mercy",
+    "name": "Mercy",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/2508ddd39a178d5f6ae993ab43eeb3e7961e5a54a9507e6ae347381193f28943.png",
+    "role": "support",
+    "description": "Mercy is a versatile healer who excels at close-range combat. She can use her Caduceus Staff to heal allies, and she can use her Caduceus Blaster to deal damage. Mercy's ultimate ability, Valkyrie, allows her to fly and heal allies in an area around her."
+  },
+  {
+    "key": "moira",
+    "name": "Moira",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/000beeb5606e01497897fa9210dd3b1e78e1159ebfd8afdc9e989047d7d3d08f.png",
+    "role": "support",
+    "description": "Moira is a versatile healer who excels at close-range combat. She can use her Biotic Grasp to heal allies, and she can use her Biotic Orb to deal damage. Moira's ultimate ability, Coalescence, heals allies in an area around her."
+  },
+  {
+    "key": "orisa",
+    "name": "Orisa",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/71e96294617e81051d120b5d04b491bb1ea40e2933da44d6631aae149aac411d.png",
+    "role": "tank",
+    "description": "Orisa is a versatile tank who excels at close-range combat. She can use her Fusion Driver to deal damage, and she can use her Protective Barrier to block incoming projectiles. Orisa's ultimate ability, Supercharger, increases the damage of allies in an area around her."
+  },
+  {
+    "key": "pharah",
+    "name": "Pharah",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/f8261595eca3e43e3b37cadb8161902cc416e38b7e0caa855f4555001156d814.png",
+    "role": "damage",
+    "description": "Pharah is a versatile damage dealer who excels at long-range combat. She can use her Concussive Blast to knock enemies back, and she can use her Rocket Launcher to deal damage. Pharah's ultimate ability, Barrage, deals damage to enemies in an area."
+  },
+  {
+    "key": "ramattra",
+    "name": "Ramattra",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/3e0367155e1940a24da076c6f1f065aacede88dbc323631491aa0cd5a51e0b66.png",
+    "role": "tank",
+    "description": "Ramattra is a versatile tank who excels at close-range combat. She can use her Fusion Driver to deal damage, and she can use her Protective Barrier to block incoming projectiles. Ramattra's ultimate ability, Supercharger, increases the damage of allies in an area around her."
+  },
+  {
+    "key": "reaper",
+    "name": "Reaper",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/2edb9af69d987bb503cd31f7013ae693640e692b321a73d175957b9e64394f40.png",
+    "role": "damage",
+    "description": "Reaper is a versatile damage dealer who excels at close-range combat. He can use his Wraith Form to become invisible, and he can use his Hellfire Shotguns to deal damage. Reaper's ultimate ability, Death Blossom, deals damage to enemies in an area."
+  },
+  {
+    "key": "reinhardt",
+    "name": "Reinhardt",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/490d2f79f8547d6e364306af60c8184fb8024b8e55809e4cc501126109981a65.png",
+    "role": "tank",
+    "description": "Reinhardt is a versatile tank who excels at close-range combat. He can use his Rocket Hammer to deal damage, and he can use his Barrier Field to block incoming projectiles. Reinhardt's ultimate ability, Earthshatter, knocks enemies back and deals damage."
+  },
+  {
+    "key": "roadhog",
+    "name": "Roadhog",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/72e02e747b66b61fcbc02d35d350770b3ec7cbaabd0a7ca17c0d82743d43a7e8.png",
+    "role": "tank",
+    "description": "Roadhog is a versatile tank who excels at close-range combat. He can use his Scrap Gun to deal damage, and he can use his Chain Hook to pull enemies toward him. Roadhog's ultimate ability, Whole Hog, knocks enemies back and deals damage."
+  },
+  {
+    "key": "sigma",
+    "name": "Sigma",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/cd7a4c0a0df8924afb2c9f6df864ed040f20250440c36ca2eb634acf6609c5e4.png",
+    "role": "tank",
+    "description": "Sigma is a versatile tank who excels at close-range combat. He can use his Kinetic Grasp to deal damage, and he can use his Barrier Field to block incoming projectiles. Sigma's ultimate ability, Gravitic Flux, pulls enemies toward him and deals damage."
+  },
+  {
+    "key": "sojourn",
+    "name": "Sojourn",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a53bf7ad9d2f33aaf9199a00989f86d4ba1f67c281ba550312c7d96e70fec4ea.png",
+    "role": "damage",
+    "description": "Sojourn is a versatile damage dealer who excels at long-range combat. She can use her Concussive Blast to knock enemies back, and she can use her Rocket Launcher to deal damage. Sojourn's ultimate ability, Barrage, deals damage to enemies in an area."
+  },
+  {
+    "key": "soldier-76",
+    "name": "Soldier: 76",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/20b4ef00ed05d6dba75df228241ed528df7b6c9556f04c8070bad1e2f89e0ff5.png",
+    "role": "damage",
+    "description": "Soldier: 76 is a versatile damage dealer who excels at long-range combat. He can use his Biotic Field to heal allies, and he can use his Helix Rockets to deal damage. Soldier: 76's ultimate ability, Tactical Visor, increases his damage output."
+  },
+  {
+    "key": "sombra",
+    "name": "Sombra",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/bca8532688f01b071806063b9472f1c0f9fc9c7948e6b59e210006e69cec9022.png",
+    "role": "damage",
+    "description": "Sombra is a versatile damage dealer who excels at long-range combat. She can use her Hack to disable enemies, and she can use her Machine Pistol to deal damage. Sombra's ultimate ability, EMP, disables enemies in an area."
+  },
+  {
+    "key": "symmetra",
+    "name": "Symmetra",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7f2024c5387c9d76d944a5db021c2774d1e9d7cbf39e9b6a35b364d38ea250ac.png",
+    "role": "damage",
+    "description": "Symmetra is a versatile damage dealer who excels at long-range combat. She can use her Photon Projector to deal damage, and she can use her Photon Barrier to block incoming projectiles. Symmetra's ultimate ability, Photon Barrier, blocks incoming projectiles."
+  },
+  {
+    "key": "torbjorn",
+    "name": "Torbjorn",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/1309ab1add1cc19189a2c8bc7b1471f88efa1073e9705d2397fdb37d45707d01.png",
+    "role": "damage",
+    "description": "Torbjorn is a versatile damage dealer who excels at long-range combat. He can use his Forge Hammer to deal damage, and he can use his Turret to deal damage. Torbj\u00f6rn's ultimate ability, Molten Core, deals damage to enemies in an area."
+  },
+  {
+    "key": "tracer",
+    "name": "Tracer",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a66413200e934da19540afac965cfe8a2de4ada593d9a52d53108bb28e8bbc9c.png",
+    "role": "damage",
+    "description": "Tracer is a versatile damage dealer who excels at long-range combat. She can use her Pulse Bomb to deal damage, and she can use her Pulse Pistols to deal damage. Tracer's ultimate ability, Recall, teleports her to her position at the start of her ultimate ability."
+  },
+  {
+    "key": "widowmaker",
+    "name": "Widowmaker",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a714f1cb33cc91c6b5b3e89ffe7e325b99e7c89cc8e8feced594f81305147efe.png",
+    "role": "damage",
+    "description": "Widowmaker is a versatile damage dealer who excels at long-range combat. She can use her Venom Mine to deal damage, and she can use her Widow's Kiss to deal damage. Widowmaker's ultimate ability, Grappling Hook, pulls her to a location."
+  },
+  {
+    "key": "winston",
+    "name": "Winston",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/bd9c8e634d89488459dfc1aeb21b602fa5c39aa05601a4167682f3a3fed4e0ee.png",
+    "role": "tank",
+    "description": "Winston is a versatile tank who excels at close-range combat. He can use his Barrier Projector to block incoming projectiles, and he can use his Tesla Cannon to deal damage. Winston's ultimate ability, Primal Rage, increases his damage output."
+  },
+  {
+    "key": "wrecking-ball",
+    "name": "Wrecking Ball",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/5c18e39ce567ee8a84078f775b9f76a2ba891de601c059a3d2b46b61ae4afb42.png",
+    "role": "tank",
+    "description": "Wrecking Ball is a versatile tank who excels at close-range combat. He can use his Minefield to block incoming projectiles, and he can use his Fusion Cannon to deal damage. Wrecking Ball's ultimate ability, Piledriver, deals damage to enemies in an area."
+  },
+  {
+    "key": "zarya",
+    "name": "Zarya",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/8819ba85823136640d8eba2af6fd7b19d46b9ee8ab192a4e06f396d1e5231f7a.png",
+    "role": "tank",
+    "description": "Zarya is a versatile tank who excels at close-range combat. She can use her Particle Barrier to block incoming projectiles, and she can use her Particle Cannon to deal damage. Zarya's ultimate ability, Graviton Surge, pulls enemies toward her."
+  },
+  {
+    "key": "zenyatta",
+    "name": "Zenyatta",
+    "avatar_url": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/71cabc939c577581f66b952f9c70891db779251e8e70f29de3c7bf494edacfe4.png",
+    "role": "support",
+    "description": "Zenyatta is a versatile support who excels at long-range combat. He can use his Orb of Harmony to heal allies, and he can use his Orb of Discord to increase the damage output of allies. Zenyatta's ultimate ability, Transcendence, heals allies in an area."
+  }
+]
