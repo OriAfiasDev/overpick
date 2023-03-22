@@ -31,17 +31,17 @@ export const HeroesList: React.FC<Props> = ({ heroes, selectedHeroes, setSelecte
 };
 
 const ScrollContainer = styled.div`
-  overflow-x: scroll;
+  overflow-x: auto;
   width: 100vw;
 `;
 
 const HorizontalList = styled.div`
   display: flex;
   width: max-content;
-  height: 180px;
+  height: 200px;
   padding: 0;
   margin: 0;
-  overflow-x: scroll;
+  overflow-x: auto;
   margin: 10px 0 30px 0;
 
   @media (max-width: 768px) {
