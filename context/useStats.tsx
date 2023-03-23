@@ -1,11 +1,15 @@
 import { useState, useEffect, createContext, useContext, useCallback } from 'react';
 
-type StatsContextProps = any;
+interface StatsContextProps {
+  stats: any;
+  battleNet: { gamerTag: string; nickName: string };
+  setBattleNet: (gamerTag: string, nickName: string) => void;
+}
 
-const StatsContext = createContext<StatsContextProps>(null);
+const StatsContext = createContext<StatsContextProps>(null!);
 
 const StatsContextProvider: React.FC<any> = ({ children }) => {
-  const [stats, setStats] = useState<StatsContextProps>(null);
+  const [stats, setStats] = useState<StatsContextProps>(null!);
   const [battleNet, _setBattleNet] = useState<{ gamerTag: string; nickName: string }>({ gamerTag: '', nickName: '' });
 
   useEffect(() => {
