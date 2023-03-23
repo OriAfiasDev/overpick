@@ -1,4 +1,5 @@
 import supabase from '@/backend/supabase';
+import { BattleNet } from '@/components/BattleNet';
 import { HeroesList } from '@/components/HeroesList';
 import RolePicker from '@/components/RolePicker';
 import { SubmitButton } from '@/components/SubmitButton';
@@ -69,6 +70,7 @@ const Team: React.FC<Props> = ({ heroes }) => {
 
   return (
     <div>
+      <BattleNet />
       {allRoles.map((role) => (
         <HeroesList
           key={role}
