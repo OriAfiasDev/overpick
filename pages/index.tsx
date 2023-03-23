@@ -1,10 +1,9 @@
-import { Damage } from '@/assets/Damage';
-import { Support } from '@/assets/Support';
-import { Tank } from '@/assets/Tank';
 import supabase from '@/backend/supabase';
 import { HeroesList } from '@/components/HeroesList';
+import RolePicker from '@/components/RolePicker';
+import { SubmitButton } from '@/components/SubmitButton';
+import { TopCounters } from '@/components/TopCounters';
 import { useCallback, useMemo, useState } from 'react';
-import styled from 'styled-components';
 
 interface Props {
   heroes: any[];
@@ -26,8 +25,8 @@ const allRoles: RoleType[] = ['tank', 'damage', 'support'];
 
 const Team: React.FC<Props> = ({ heroes }) => {
   const [selectedHeroes, setSelectedHeroes] = useState<SelectedHeroes>(initialSelectedHeroes);
-  const [myRole, setMyRole] = useState<string>('');
-  const [bestCounters, setBestCounters] = useState<{ [name: string]: number }>({});
+  const [myRole, setMyRole] = useState<RoleType | null>(null);
+  const [topCounters, setTopCounters] = useState<CountersMap>(null!);
 
   const isAllSelected = useMemo(
     () => Object.values(selectedHeroes).every((role) => role.heroes.length === role.limit),
@@ -51,7 +50,7 @@ const Team: React.FC<Props> = ({ heroes }) => {
     });
 
     const data = await res.json();
-    setBestCounters(data);
+    setTopCounters(data);
   }, [selectedHeroes, isAllSelected, myRole]);
 
   const onSelectedHero = useCallback((hero: Hero, role: RoleType) => {
@@ -69,87 +68,28 @@ const Team: React.FC<Props> = ({ heroes }) => {
   }, []);
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div>
       {allRoles.map((role) => (
-        <div key={role}>
-          <HeroesList
-            role={role}
-            limit={selectedHeroes[role].limit}
-            selectedHeroes={selectedHeroes[role].heroes}
-            setSelectedHero={(hero: Hero) => onSelectedHero(hero, role as RoleType)}
-            heroes={heroes.filter((hero) => hero.role === role)}
-          />
-        </div>
+        <HeroesList
+          key={role}
+          role={role}
+          limit={selectedHeroes[role].limit}
+          selectedHeroes={selectedHeroes[role].heroes}
+          setSelectedHero={(hero: Hero) => onSelectedHero(hero, role as RoleType)}
+          heroes={heroes.filter((hero) => hero.role === role)}
+        />
       ))}
-      <h1>My Role</h1>
-      <Row>
-        <RoleButton selected={myRole === 'tank'} onClick={() => setMyRole('tank')}>
-          <Tank />
-        </RoleButton>
-        <RoleButton selected={myRole === 'damage'} onClick={() => setMyRole('damage')}>
-          <Damage />
-        </RoleButton>
-        <RoleButton selected={myRole === 'support'} onClick={() => setMyRole('support')}>
-          <Support />
-        </RoleButton>
-      </Row>
+      <RolePicker selectedRole={myRole} setSelectedRole={setMyRole} />
       <SubmitButton onClick={onSubmit} disabled={!isAllSelected || !myRole}>
-        Generate Pick
+        generate pick
       </SubmitButton>
-      {Object.keys(bestCounters)
-        .sort((a, b) => bestCounters[b] - bestCounters[a])
-        .map((name) => (
-          <div key={name}>
-            {name}: Score {bestCounters[name]}
-          </div>
-        ))}
+      <TopCounters topCounters={topCounters} />
     </div>
   );
 };
 
-export default Team;
-
-const SubmitButton = styled.span<{ disabled?: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #df5e1d;
-  border: 1px solid #df5e1d;
-  margin: 20px;
-  color: #fff;
-  font-size: 24px;
-  height: 70px;
-  padding: 20px;
-  cursor: pointer;
-  opacity: ${({ disabled }) => (disabled ? 0.5 : 0.87)};
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  transition: opacity 0.2s ease-in-out;
-
-  &:hover {
-    ${({ disabled }) => !disabled && 'opacity: 1'};
-  }
-`;
-
-const Row = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const RoleButton = styled(SubmitButton)<{ selected?: boolean }>`
-  background-color: transparent;
-  border-radius: 50%;
-  height: auto;
-  ${({ selected }) =>
-    selected &&
-    `
-    background-color: #df5e1d;
-    border: 1px solid #df5e1d;
-  `}
-`;
-
 export async function getStaticProps() {
-  let { data: heroes, error } = await supabase.from('heroes').select('*');
+  let { data: heroes } = await supabase.from('heroes').select('*');
 
   return {
     props: {
@@ -157,3 +97,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+export default Team;

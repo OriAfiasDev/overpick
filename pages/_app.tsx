@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import styled from 'styled-components';
 
-const bigNoodle = localFont({ src: '../fonts/big_noodle_titling_oblique.ttf' });
+const bigNoodle = localFont({ src: '../assets/fonts/big_noodle_titling_oblique.ttf' });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -16,4 +16,5 @@ export default function App({ Component, pageProps }: AppProps) {
 const Main = styled.main`
   margin: 50px;
   box-sizing: border-box;
+  text-align: center;
 `;

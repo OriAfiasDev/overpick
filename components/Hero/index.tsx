@@ -4,30 +4,36 @@ import styled from 'styled-components';
 interface Props {
   hero: Hero;
   selected?: boolean;
-  setSelectedHero: (hero: Hero) => void;
+  setSelectedHero?: (hero: Hero) => void;
 }
 
-export const Hero: React.FC<Props> = ({ hero, selected, setSelectedHero }) => {
+export const Hero: React.FC<Props> = ({ hero, selected, setSelectedHero, ...rest }) => {
   return (
-    <Container avatar_url={hero.avatar_url} selected={selected} onClick={() => setSelectedHero(hero)}>
+    <Container
+      avatar_url={hero.avatar_url}
+      selected={selected}
+      onClick={() => (setSelectedHero ? setSelectedHero(hero) : null)}
+      clickable={!!setSelectedHero}
+      {...rest}
+    >
       <span className='name'>{hero.name}</span>
     </Container>
   );
 };
 
-const Container = styled.div<{ avatar_url: string; selected?: boolean }>`
+const Container = styled.div<{ avatar_url: string; selected?: boolean; clickable?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  border: 4px solid ${({ selected }) => (selected ? '#df5e1d' : '#ddd')};
+  border: 4px solid ${({ selected }) => (selected ? 'var(--primary-ow)' : 'var(--secondary-ow)')};
   border-radius: 16px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   height: 180px;
   width: 180px;
   margin: 0 0.5rem;
-  cursor: pointer;
+  cursor: ${({ clickable }) => (clickable ? 'pointer' : 'default')};
 
   background-image: ${({
     avatar_url,
@@ -37,6 +43,7 @@ const Container = styled.div<{ avatar_url: string; selected?: boolean }>`
   & > .name {
     font-size: 1.5rem;
     margin-bottom: 0;
+    color: #fff;
   }
 
   @media (max-width: 768px) {

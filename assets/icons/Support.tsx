@@ -3,7 +3,7 @@ interface Props {
   color?: string;
 }
 
-export const Support: React.FC<Props> = ({ size = 20, color = 'white' }) => (
+export const Support: React.FC<Props> = ({ size, color }) => (
   <svg width={size} height={size} viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
       fillRule='evenodd'
