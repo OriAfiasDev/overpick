@@ -16,8 +16,8 @@ interface Role {
 
 interface Counter {
   hero: { name: string };
-  counter: { name: string; role: string };
+  counter: Hero;
   match: number;
 }
 
-type CountersMap = { [name: string]: number };
+type CountersMap = { [name: string]: { hero: Hero; match: number } };

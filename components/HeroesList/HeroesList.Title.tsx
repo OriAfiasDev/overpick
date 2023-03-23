@@ -17,7 +17,7 @@ export const HeroesListTitle: React.FC<Props> = ({ count, limit, role }) => (
   </Title>
 );
 
-const Title = styled.h1`
+export const Title = styled.h1`
   display: flex;
   align-items: center;
   justify-content: center;

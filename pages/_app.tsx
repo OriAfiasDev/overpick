@@ -16,4 +16,5 @@ export default function App({ Component, pageProps }: AppProps) {
 const Main = styled.main`
   margin: 50px;
   box-sizing: border-box;
+  text-align: center;
 `;
