@@ -1,9 +1,9 @@
-import { Damage } from './Damage';
-import { Support } from './Support';
-import { Tank } from './Tank';
+import { Damage } from './icons/Damage';
+import { Support } from './icons/Support';
+import { Tank } from './icons/Tank';
 
 const DEFAULT_ICON_SIZE = 24;
-const DEFAULT_ICON_COLOR = '#fff';
+const DEFAULT_ICON_COLOR = 'var(--primary-icon)';
 
 export const getRoleIcon = (role: RoleType, color: string = DEFAULT_ICON_COLOR, size: number = DEFAULT_ICON_SIZE) => {
   switch (role) {

@@ -3,7 +3,7 @@ interface Props {
   color?: string;
 }
 
-export const Damage: React.FC<Props> = ({ size = 20, color = 'white' }) => (
+export const Damage: React.FC<Props> = ({ size, color }) => (
   <svg width={size} height={size} viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
       d='M2.13965 35.1085V38.8528C2.13965 39.157 2.26061 39.4488 2.47576 39.664C2.69091 39.8791 2.98274 40 3.28701 40H9.83685C10.1411 40 10.433 39.8791 10.6481 39.664C10.8633 39.4488 10.984 39.157 10.984 38.8528V35.1085H2.13965Z'
