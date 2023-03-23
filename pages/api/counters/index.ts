@@ -14,7 +14,7 @@ const getAllCounters = async (enemyTeam: string[], myRole: string): Promise<Coun
     .select(
       `match,
     hero:heroes!hero_id(name),
-    counter:heroes!countered_hero_id!inner(name, role)
+    counter:heroes!countered_hero_id!inner(*)
 `
     )
     .in('hero_id', enemyTeam)
@@ -24,10 +24,10 @@ const getAllCounters = async (enemyTeam: string[], myRole: string): Promise<Coun
 };
 
 const getCounterMap = (counters: Counter[]): CountersMap => {
-  return counters.reduce((acc, { counter: { name }, match }) => {
+  return counters.reduce((acc, { counter, match }) => {
     return {
       ...acc,
-      [name]: (acc[name] || 0) + match,
+      [counter.name]: { hero: counter, match: (acc[counter.name]?.match || 0) + match },
     };
   }, {} as CountersMap);
 };
