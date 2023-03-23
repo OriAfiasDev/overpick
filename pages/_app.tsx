@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import styled from 'styled-components';
 
-const bigNoodle = localFont({ src: '../fonts/big_noodle_titling_oblique.ttf' });
+const bigNoodle = localFont({ src: '../assets/fonts/big_noodle_titling_oblique.ttf' });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
