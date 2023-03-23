@@ -3,13 +3,16 @@ import localFont from 'next/font/local';
 import styled from 'styled-components';
 import '@/styles/globals.css';
 import '@/styles/tooltip.css';
+import StatsContextProvider from '@/context/useStats';
 
 const bigNoodle = localFont({ src: '../assets/fonts/big_noodle_titling_oblique.ttf' });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Main className={bigNoodle.className}>
-      <Component {...pageProps} />
+      <StatsContextProvider>
+        <Component {...pageProps} />
+      </StatsContextProvider>
     </Main>
   );
 }
