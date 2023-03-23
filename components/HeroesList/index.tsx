@@ -7,7 +7,7 @@ interface Props {
   selectedHeroes: Hero[];
   setSelectedHero: (hero: Hero) => void;
   limit: number;
-  role: Role;
+  role: RoleType;
 }
 
 export const HeroesList: React.FC<Props> = ({ heroes, selectedHeroes, setSelectedHero, role, limit }) => {
@@ -32,19 +32,12 @@ export const HeroesList: React.FC<Props> = ({ heroes, selectedHeroes, setSelecte
 
 const ScrollContainer = styled.div`
   overflow-x: auto;
-  width: 100vw;
+  width: 100%;
+  margin: 10px 0 30px 0;
 `;
 
 const HorizontalList = styled.div`
   display: flex;
   width: max-content;
-  height: 200px;
-  padding: 0;
-  margin: 0;
   overflow-x: auto;
-  margin: 10px 0 30px 0;
-
-  @media (max-width: 768px) {
-    height: 120px;
-  }
 `;

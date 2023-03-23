@@ -1,14 +1,19 @@
 import localFont from 'next/font/local';
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+import styled from 'styled-components';
 
 const bigNoodle = localFont({ src: '../fonts/big_noodle_titling_oblique.ttf' });
 
-import '@/styles/globals.css';
-import type { AppProps } from 'next/app';
-
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={bigNoodle.className}>
+    <Main className={bigNoodle.className}>
       <Component {...pageProps} />
-    </main>
+    </Main>
   );
 }
+
+const Main = styled.main`
+  margin: 50px;
+  box-sizing: border-box;
+`;

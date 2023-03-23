@@ -20,7 +20,6 @@ const Container = styled.div<{ avatar_url: string; selected?: boolean }>`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: 0rem;
   border: 4px solid ${({ selected }) => (selected ? '#df5e1d' : '#ddd')};
   border-radius: 16px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);

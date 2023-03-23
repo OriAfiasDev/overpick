@@ -8,7 +8,7 @@ interface Props {
 }
 
 type SelectedHeroes = {
-  [role in Role]: { heroes: Hero[]; limit: number };
+  [role in RoleType]: { heroes: Hero[]; limit: number };
 };
 
 const initialSelectedHeroes: SelectedHeroes = {
@@ -17,7 +17,7 @@ const initialSelectedHeroes: SelectedHeroes = {
   support: { heroes: [], limit: 2 },
 };
 
-const allRoles: Role[] = ['tank', 'damage', 'support'];
+const allRoles: RoleType[] = ['tank', 'damage', 'support'];
 
 const Team: React.FC<Props> = ({ heroes }) => {
   const [selectedHeroes, setSelectedHeroes] = useState<SelectedHeroes>(initialSelectedHeroes);
@@ -42,14 +42,14 @@ const Team: React.FC<Props> = ({ heroes }) => {
           ...selectedHeroes.support.heroes.map((h) => h.name),
           ...selectedHeroes.tank.heroes.map((h) => h.name),
         ],
-        myPick: 'tank',
+        myPick: '',
       }),
     });
     const data = await res.json();
     setBestCounters(data.countersMap);
   };
 
-  const onSelectedHero = useCallback((hero: Hero, role: Role) => {
+  const onSelectedHero = useCallback((hero: Hero, role: RoleType) => {
     setSelectedHeroes((prev) => ({
       ...prev,
       [role]: {
@@ -78,7 +78,7 @@ const Team: React.FC<Props> = ({ heroes }) => {
             role={role}
             limit={selectedHeroes[role].limit}
             selectedHeroes={selectedHeroes[role].heroes}
-            setSelectedHero={(hero: Hero) => onSelectedHero(hero, role as Role)}
+            setSelectedHero={(hero: Hero) => onSelectedHero(hero, role as RoleType)}
             heroes={heroes.filter((hero) => hero.role === role)}
           />
         </div>

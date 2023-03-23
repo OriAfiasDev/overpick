@@ -1,15 +1,17 @@
+import { getRoleIcon } from '@/assets';
 import styled from 'styled-components';
 
 interface Props {
   count: number;
   limit: number;
-  role: Role;
+  role: RoleType;
 }
 
 export const HeroesListTitle: React.FC<Props> = ({ count, limit, role }) => (
   <Title>
-    Pick enemy {role}&nbsp;
-    <span>
+    Pick enemy
+    <span className='icon'>{getRoleIcon(role)}</span>
+    <span className='count'>
       ({count} of {limit})
     </span>
   </Title>
@@ -20,7 +22,11 @@ const Title = styled.h1`
   align-items: center;
   justify-content: center;
 
-  & > span {
+  & > .icon {
+    margin: 0 10px;
+  }
+
+  & > .count {
     font-size: 1.5rem;
   }
 `;
