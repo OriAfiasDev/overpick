@@ -26,7 +26,7 @@ const Container = styled.div<{ avatar_url: string; selected?: boolean; clickable
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  border: 4px solid ${({ selected }) => (selected ? '#df5e1d' : '#ddd')};
+  border: 4px solid ${({ selected }) => (selected ? 'var(--primary-ow)' : 'var(--secondary-ow)')};
   border-radius: 16px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -43,6 +43,7 @@ const Container = styled.div<{ avatar_url: string; selected?: boolean; clickable
   & > .name {
     font-size: 1.5rem;
     margin-bottom: 0;
+    color: #fff;
   }
 
   @media (max-width: 768px) {

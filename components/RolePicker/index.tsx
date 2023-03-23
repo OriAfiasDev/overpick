@@ -31,13 +31,14 @@ const Row = styled.div`
 
 const RoleButton = styled(SubmitButton)<{ selected?: boolean }>`
   background-color: transparent;
+  opacity: 1;
   border-radius: 50%;
   height: auto;
   ${({ selected }) =>
     selected &&
     `
-    background-color: #df5e1d;
-    border: 1px solid #df5e1d;
+    background-color: var(--primary-ow);
+    border: 1px solid var(--primary-ow);
   `}
 `;
 

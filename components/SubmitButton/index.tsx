@@ -12,8 +12,8 @@ const Button = styled.span<{ disabled?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #df5e1d;
-  border: 1px solid #df5e1d;
+  background-color: var(--primary-ow);
+  border: 1px solid var(--primary-ow);
   margin: 20px;
   color: #fff;
   font-size: 24px;
