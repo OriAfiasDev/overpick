@@ -1,3 +1,6 @@
+import { Damage } from '@/assets/Damage';
+import { Support } from '@/assets/Support';
+import { Tank } from '@/assets/Tank';
 import supabase from '@/backend/supabase';
 import { HeroesList } from '@/components/HeroesList';
 import { useCallback, useMemo, useState } from 'react';
@@ -32,7 +35,7 @@ const Team: React.FC<Props> = ({ heroes }) => {
   );
 
   const onSubmit = useCallback(async () => {
-    if (!isAllSelected) return;
+    if (!isAllSelected || !myRole) return;
 
     const enemyTeam = Object.values(selectedHeroes).reduce(
       (acc: string[], role: SelectedHero) => [...acc, ...role.heroes.map((h) => h.id)],
@@ -78,8 +81,19 @@ const Team: React.FC<Props> = ({ heroes }) => {
           />
         </div>
       ))}
-      <input value={myRole} onChange={(e) => setMyRole(e.target.value)} />
-      <SubmitButton onClick={onSubmit} disabled={!isAllSelected}>
+      <h1>My Role</h1>
+      <Row>
+        <RoleButton selected={myRole === 'tank'} onClick={() => setMyRole('tank')}>
+          <Tank />
+        </RoleButton>
+        <RoleButton selected={myRole === 'damage'} onClick={() => setMyRole('damage')}>
+          <Damage />
+        </RoleButton>
+        <RoleButton selected={myRole === 'support'} onClick={() => setMyRole('support')}>
+          <Support />
+        </RoleButton>
+      </Row>
+      <SubmitButton onClick={onSubmit} disabled={!isAllSelected || !myRole}>
         Generate Pick
       </SubmitButton>
       {Object.keys(bestCounters)
@@ -95,17 +109,17 @@ const Team: React.FC<Props> = ({ heroes }) => {
 
 export default Team;
 
-const SubmitButton = styled.span<{ disabled: boolean }>`
+const SubmitButton = styled.span<{ disabled?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #df5e1d;
+  border: 1px solid #df5e1d;
   margin: 20px;
   color: #fff;
   font-size: 24px;
   height: 70px;
   padding: 20px;
-  border: none;
   cursor: pointer;
   opacity: ${({ disabled }) => (disabled ? 0.5 : 0.87)};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
@@ -114,6 +128,24 @@ const SubmitButton = styled.span<{ disabled: boolean }>`
   &:hover {
     ${({ disabled }) => !disabled && 'opacity: 1'};
   }
+`;
+
+const Row = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const RoleButton = styled(SubmitButton)<{ selected?: boolean }>`
+  background-color: transparent;
+  border-radius: 50%;
+  height: auto;
+  ${({ selected }) =>
+    selected &&
+    `
+    background-color: #df5e1d;
+    border: 1px solid #df5e1d;
+  `}
 `;
 
 export async function getStaticProps() {
