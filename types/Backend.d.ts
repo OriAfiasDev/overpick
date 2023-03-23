@@ -13,3 +13,11 @@ interface Role {
   description: string;
   avatar_url: string;
 }
+
+interface Counter {
+  hero: { name: string };
+  counter: { name: string; role: string };
+  match: number;
+}
+
+type CountersMap = { [name: string]: number };

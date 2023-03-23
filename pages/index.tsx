@@ -7,8 +7,10 @@ interface Props {
   heroes: any[];
 }
 
+type SelectedHero = { heroes: Hero[]; limit: number };
+
 type SelectedHeroes = {
-  [role in RoleType]: { heroes: Hero[]; limit: number };
+  [role in RoleType]: SelectedHero;
 };
 
 const initialSelectedHeroes: SelectedHeroes = {
@@ -21,6 +23,7 @@ const allRoles: RoleType[] = ['tank', 'damage', 'support'];
 
 const Team: React.FC<Props> = ({ heroes }) => {
   const [selectedHeroes, setSelectedHeroes] = useState<SelectedHeroes>(initialSelectedHeroes);
+  const [myRole, setMyRole] = useState<string>('');
   const [bestCounters, setBestCounters] = useState<{ [name: string]: number }>({});
 
   const isAllSelected = useMemo(
@@ -28,26 +31,25 @@ const Team: React.FC<Props> = ({ heroes }) => {
     [selectedHeroes]
   );
 
-  const onSubmit = async () => {
+  const onSubmit = useCallback(async () => {
     if (!isAllSelected) return;
+
+    const enemyTeam = Object.values(selectedHeroes).reduce(
+      (acc: string[], role: SelectedHero) => [...acc, ...role.heroes.map((h) => h.id)],
+      []
+    );
 
     const res = await fetch('/api/counters', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        enemyTeam: [
-          ...selectedHeroes.damage.heroes.map((h) => h.name),
-          ...selectedHeroes.support.heroes.map((h) => h.name),
-          ...selectedHeroes.tank.heroes.map((h) => h.name),
-        ],
-        myPick: '',
-      }),
+      body: JSON.stringify({ enemyTeam, myRole }),
     });
+
     const data = await res.json();
-    setBestCounters(data.countersMap);
-  };
+    setBestCounters(data);
+  }, [selectedHeroes, isAllSelected, myRole]);
 
   const onSelectedHero = useCallback((hero: Hero, role: RoleType) => {
     setSelectedHeroes((prev) => ({
@@ -65,13 +67,6 @@ const Team: React.FC<Props> = ({ heroes }) => {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      {Object.keys(bestCounters)
-        .sort((a, b) => bestCounters[b] - bestCounters[a])
-        .map((name) => (
-          <div key={name}>
-            {name}: Score {bestCounters[name]}
-          </div>
-        ))}
       {allRoles.map((role) => (
         <div key={role}>
           <HeroesList
@@ -83,9 +78,17 @@ const Team: React.FC<Props> = ({ heroes }) => {
           />
         </div>
       ))}
+      <input value={myRole} onChange={(e) => setMyRole(e.target.value)} />
       <SubmitButton onClick={onSubmit} disabled={!isAllSelected}>
         Generate Pick
       </SubmitButton>
+      {Object.keys(bestCounters)
+        .sort((a, b) => bestCounters[b] - bestCounters[a])
+        .map((name) => (
+          <div key={name}>
+            {name}: Score {bestCounters[name]}
+          </div>
+        ))}
     </div>
   );
 };
