@@ -1,0 +1,27 @@
+[data-title]:hover:after {
+  opacity: 1;
+  transition: all 0.2s ease 0.5s;
+  transition-delay: 0.2s;
+  visibility: visible;
+}
+[data-title]:after {
+  content: attr(data-title);
+  background-color: rgb(var(--background-end-rgb));
+  color: var(--primary-ow);
+  font-size: 1.25rem;
+  position: absolute;
+  padding: 5px 10px;
+  bottom: 0;
+  left: 0;
+  white-space: pre-line;
+  box-shadow: 1px 1px 3px #222222;
+  opacity: 0;
+  border: 2px solid var(--primary-ow);
+  border-radius: 10px;
+  z-index: 99999;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+}
+[data-title] {
+  position: relative;
+}
