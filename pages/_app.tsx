@@ -2,7 +2,6 @@ import type { AppProps } from 'next/app';
 import localFont from 'next/font/local';
 import styled from 'styled-components';
 import '@/styles/globals.css';
-import '@/styles/tooltip.css';
 import StatsContextProvider from '@/context/useStats';
 
 const bigNoodle = localFont({ src: '../assets/fonts/big_noodle_titling_oblique.ttf' });
