@@ -7,4 +7,9 @@ interface Hero {
   health?: number;
 }
 
-type Role = 'tank' | 'damage' | 'support';
+interface Role {
+  id: string;
+  name: string;
+  description: string;
+  avatar_url: string;
+}
